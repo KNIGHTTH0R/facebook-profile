@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit 
+		 color="true"
+		 converErrorsToExceptions = "true"
+		 convertWarningsToExceptions = "true"
+		 convertNoticesToExceptions = "true"
+		 stopOnFailures = "false"
+		 syntaxCheck = "false"
+	>
+	<testsuites>
+		<testsuite name="Test aivo-test">
+			<directory>./tests/</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>

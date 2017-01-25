@@ -8,9 +8,14 @@ $app->get('/', function ( $request, $response, $args ){
 
 	return $view;
 });
+$app->get('/hola', function (){
+    //  return $this->response->withStatus(200)->withHeader('Location', '/api/facebook/profiles');
 
-$app->map(['POST','GET'],'/api/facebook/profiles[/{id}]',function($request,$response){
-	require_once 'facebook_profiler.php';
+
+	echo 'hola';
+});
+$app->map(['POST','GET'],'/profiles[/{id}]',function($request,$response){
+	include_once '../app/api/facebook/facebook_profiler.php';
 	$user_id="";
 	$view="";
 	if(($request->getParam("id") || $request->getAttribute("id"))==null){

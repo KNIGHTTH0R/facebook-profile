@@ -9,7 +9,7 @@ $container = $app->getContainer();
 $container['view'] = new \Slim\Views\PhpRenderer("../templates/");
 
 
-require_once '../app/api/facebook/profiles.php';
+require_once '../app/routes.php';
 
 
 $app->run();

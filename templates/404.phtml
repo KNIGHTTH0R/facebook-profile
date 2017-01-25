@@ -2,19 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<?php require_once '../app/header.php';?>
+	<?php require_once 'shared/header.php';?>
   <title>Profile not found</title>
 
 </head>
 <body>
  <div class="container">
-  <div class="row">
-  <div class="col s12 m8">
-    <div class="left">
-     <a href="/api/facebook/profiles" class="btn btn-large waves-effect waves-light"><i class="material-icons">keyboard_backspace</i></a>
-    </div>
-      </div>
-  </div>
+  <?php include_once 'shared/go-back.php';?>
   <div class="row">
     <div class="col s12 m6 offset-m3">
 
@@ -26,6 +20,6 @@
       </div>
     </div>
   </div>
-  <?php require_once '../app/scripts.php';?>
+  <?php require_once 'shared/scripts.php';?>
 </body>
 </html>	

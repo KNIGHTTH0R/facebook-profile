@@ -9,9 +9,9 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<?php require_once '../app/header.php';?>
+	<?php require_once 'shared/header.php';?>
   <title>Search for a facebook user profile</title>
- 
+  
 </head>
 <body>
  <div class="container">
@@ -21,10 +21,10 @@
       <div class="outer">
         <div class="middle">
           <div class="inner">
-          <h4>Search a facebook user profile</h4>
+            <h4>Search a facebook user profile</h4>
             <div class=" card-panel">
 
-              <form method="get" action="/api/facebook/profiles">
+              <form method="get" action="./profiles">
                 <input  placeholder="'me' or user id here" name="id">
 
                 <button type="submit" class=" waves-effect waves-light btn">
@@ -39,6 +39,6 @@
       </div>
     </div>
   </div>
-  <?php require_once '../app/scripts.php';?>
+  <?php require_once 'shared/scripts.php';?>
 </body>
 </html>	

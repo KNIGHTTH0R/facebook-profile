@@ -5,17 +5,51 @@
 * Date: 
 */
 
-class UtilsTest extends PHPUnit_Framework_TestCase
+class FacebookProfilerTest extends PHPUnit_Framework_TestCase
 {
-	public function testUtilsReturnsFacebookProfile()
+	public function testFacebookProfilerReturnsFacebookProfileWhenTheParamsIsME()
 	{
-		include_once '../../../app/api/facebook/utils.php';
+		require 'vendor/autoload.php';
+		include_once 'app/api/facebook/facebook_profiler.php';
 
-		$utils = new \Utils();
+		$facebook_profiler = new FacebookProfiler();
+		$param = "me";
 		$expected = 200;
+		$profile = $facebook_profiler->retrieveProfile($param);
 
-		$this->assertEquals($expected,$utils->getFacebookProfile("me"));
+		$this->assertEquals($expected,$profile["code"]);
 
 
 	}
+
+	public function testFacebookProfilerReturnsFacebookProfileWhenTheParamsIsID()
+	{
+		require 'vendor/autoload.php';
+		include_once 'app/api/facebook/facebook_profiler.php';
+
+		$facebook_profiler = new FacebookProfiler();
+		$param = "12312331";
+		$expected = 200;
+		$profile = $facebook_profiler->retrieveProfile($param);
+
+		$this->assertEquals($expected,$profile["code"]);
+
+
+	}
+
+	public function testFacebookProfilerReturnsFacebook803Exception()
+	{
+		require 'vendor/autoload.php';
+		include_once 'app/api/facebook/facebook_profiler.php';
+
+		$facebook_profiler = new FacebookProfiler();
+		$param = "asdasdasd";
+		$expected = 803;
+		$profile = $facebook_profiler->retrieveProfile($param);
+
+		$this->assertEquals($expected,$profile["code"]);
+
+
+	}
+	
 }
